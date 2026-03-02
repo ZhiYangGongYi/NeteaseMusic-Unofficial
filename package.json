@@ -1,0 +1,48 @@
+{
+  "name": "netease-music",
+  "version": "1.0.0",
+  "description": "网易云音乐",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "dist": "electron-builder",
+    "postinstall": "cd api-enhanced && npm install"
+  },
+  "build": {
+    "appId": "com.neteasemusic.app",
+    "productName": "网易云音乐",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "api-enhanced",
+        "to": "api-enhanced",
+        "filter": ["**/*"]
+      }
+    ],
+    "asarUnpack": [
+      "api-enhanced/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "renderer/assets/icon.png"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.3"
+  }
+}
