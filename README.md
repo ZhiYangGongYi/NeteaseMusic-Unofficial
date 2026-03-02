@@ -13,5 +13,5 @@
 
 **登录似乎有bug，不会修**
 
-**部分bug修复由DeepSeek与Grok协助完成**
+**部分bug修复由DeepSeek协助完成**
 
